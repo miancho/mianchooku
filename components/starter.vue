@@ -23,14 +23,14 @@ const lists = computed<ILink[]>(() => [
       </div>
     </div>
     <div class="flex flex-col">
-      <h1>Prueba</h1>
+      <h1>Hi, I'm Miancho</h1>
       <div class="flex w-full items-center justify-between py-2">
         <img
           class="h-20 w-20"
           height="160"
           width="160"
           src="https://res.cloudinary.com/miancho/image/upload/v1658502733/web/logo_h1dkci.svg"
-          alt="productdevbook"
+          alt="miancho"
         />
 
         <div

@@ -16,15 +16,15 @@ useHead({
 });
 </script>
 <template>
-  <main>
-    <header class="page-heading">
-      <div class="wrapper">
-        <h1 class="text-5xl font-extrabold">All articles</h1>
-        <p class="font-medium text-lg">Here's a list of all my great articles</p>
+<div class="bg-white dark:bg-black pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+    <div>
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">Recent publications</h2>
+        <p class="mt-3 text-xl text-gray-200 sm:mt-4">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
       </div>
-    </header>
+  <main>
     <section class="page-section">
-      <Tags />
+      <!-- <Tags /> -->
       <!-- Render list of all articles in ./content/blog using `path` -->
       <!-- Provide only defined fieldsin the `:query` prop -->
       <ContentList
@@ -49,11 +49,11 @@ useHead({
                     <img :src="`/${article.img}`" :alt="article.title" class="rounded-lg max-h-[8rem]" />
                   </div>
                   <header>
-                    <h1 class="text-2xl font-semibold">{{ article.title }}</h1>
-                    <p>{{ article.description }}</p>
-                    <ul class="article-tags">
+                    <h1 class="text-xl font-semibold text-gray-900 dark:text-white">{{ article.title }}</h1>
+                    <p class="mt-3 text-base text-white dark:text-gray-900s">{{ article.description }}</p>
+                    <!-- <ul class="article-tags">
                       <li class="tag !py-0.5" v-for="(tag, n) in article.tags" :key="n">{{ tag }}</li>
-                    </ul>
+                    </ul> -->
                   </header>
                 </div>
               </NuxtLink>
@@ -67,4 +67,6 @@ useHead({
       </ContentList>
     </section>
   </main>
+  </div>
+  </div>
 </template>
