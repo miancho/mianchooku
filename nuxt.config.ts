@@ -1,8 +1,9 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt';
+import presetIcons from "@unocss/preset-icons";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', "@unocss/nuxt", "@nuxtjs/color-mode"],
   content: {
     // https://content.nuxtjs.org/api/configuration
     highlight: {
@@ -20,7 +21,26 @@ export default defineNuxtConfig({
       },
     }
   },
-  tailwindcss: {
-    cssPath: '~/assets/css/main.css',
-  }
+  build: {
+    transpile: ["@headlessui/vue"],
+  },
+  unocss: {
+    uno: false,
+    preflight: false,
+    icons: true,
+    presets: [
+      presetIcons({
+        scale: 1.2,
+        extraProperties: {
+          display: "inline-block",
+        },
+      }),
+    ],
+    safelist: ["i-twemoji-flag-us-outlying-islands", "i-twemoji-flag-spain"],
+  },
+  colorMode: {
+    classSuffix: "",
+    fallback: "light",
+    storageKey: "color-mode",
+  },
 })

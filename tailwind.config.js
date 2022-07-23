@@ -1,18 +1,32 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+/** @type {import('tailwindcss/types').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: [],
+  darkMode: "class",
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./assets/**/*.scss",
+    "./assets/**/*.css",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        'header': ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
-        'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
+        sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
       },
     },
   },
+  variants: {
+    extend: {},
+  },
   plugins: [
-    require('@tailwindcss/typography'),
-    // ...
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
   ],
-}
+};
