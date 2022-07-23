@@ -1,6 +1,6 @@
 ---
 title: 'Nuxt Content v2 is awesome!'
-description: 'This is my first article!'
+description: 'This is my first article! Hey there! 👋🏾  This is my first blog post learning nuxt content.'
 img: 'img/cover (1).JPG'
 tags: [Nuxt, Content, Learning, first]
 ---

@@ -41,13 +41,22 @@ useHead({
       >
         <!-- Default list slot -->
         <template v-slot="{ list }">
-          <ul class="article-list">
-            <li v-for="article in list" :key="article._path" class="article-item">
+          <ul class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+            <li v-for="article in list" :key="article._path">
               <NuxtLink :to="article._path">
-                <div class="wrapper">
-                  <div class="img-cont w-32 shrink-0">
+                <div class="block mt-4">
+                  
+                  <!-- <div class="img-cont w-32 shrink-0">
                     <img :src="`/${article.img}`" :alt="article.title" class="rounded-lg max-h-[8rem]" />
-                  </div>
+                  </div> -->
+
+
+                <ul class="article-tags">
+                      <li class="inline-block" v-for="(tag, n) in article.tags" :key="n">{{ tag }}</li>
+                    </ul>
+
+
+
                   <header>
                     <h1 class="text-xl font-semibold text-gray-900 dark:text-white">{{ article.title }}</h1>
                     <p class="mt-3 text-base text-white dark:text-gray-900s">{{ article.description }}</p>
