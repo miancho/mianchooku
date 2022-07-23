@@ -51,8 +51,12 @@ useHead({
                   </div> -->
 
 
-                <ul class="article-tags">
-                      <li class="inline-block" v-for="(tag, n) in article.tags" :key="n">{{ tag }}</li>
+                <ul >
+                      <li class="inline-block" v-for="(tag, n) in article.tags" :key="n">
+                      <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium']">
+                      {{ tag }}
+                      </span>
+                      </li>
                     </ul>
 
 
