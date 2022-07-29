@@ -2,8 +2,8 @@ import VueGtag from 'vue-gtag-next'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGtag, {
-    property: {
+    config: {
       id: 'GA_MEASUREMENT_ID'
-    }
-  })
+    },
+  }, nuxtApp.$router)
 })
