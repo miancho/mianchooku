@@ -23,7 +23,7 @@ const lists = computed<ILink[]>(() => [
       </div>
     </div>
     <div class="flex flex-col">
-      <h1>Hi, I'm Miancho</h1>
+      <h1>Hi, my name is Damian, self-taught frontend developer.</h1>
       <div class="flex w-full items-center justify-between py-2">
         <img
           class="h-20 w-20"
