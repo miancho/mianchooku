@@ -1,12 +1,9 @@
-import { createApp } from "vue";
-import VueGtag from "vue-gtag-next";
+import VueGtag from 'vue-gtag'
 
-const app = createApp(App);
-
-app.use(VueGtag, {
-  property: {
-    id: "GA_MEASUREMENT_ID"
-  }
-});
-
-app.mount("#app");
+export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.vueApp.use(VueGtag, {
+        config: {
+            id: 'GA_MEASUREMENT_ID',
+        },
+    }, nuxtApp.$router)
+})
